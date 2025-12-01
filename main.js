@@ -7,7 +7,7 @@ let currentIdToken = null;
 window.onload = function() {
   // Render a "Sign in with Google" button
   google.accounts.id.initialize({
-    client_id: 'PASTE_YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com', // see below how to get this
+    client_id: '1063153854491-of1k6fhdrv8bbuo7vgq28dmbg8ga969j.apps.googleusercontent.com', // see below how to get this
     callback: handleCredentialResponse,
     auto_select: false,
     cancel_on_tap_outside: true
