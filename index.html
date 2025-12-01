@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hello PWA</title>
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <h1 id="status">Not signed in</h1>
@@ -14,10 +14,10 @@
   <pre id="output"></pre>
 
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').catch(console.error);
+      navigator.serviceWorker.register('service-worker.js').catch(console.error);
     }
   </script>
 </body>
