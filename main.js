@@ -29,24 +29,3 @@ function handleCredentialResponse(response) {
   document.getElementById('refresh').style.display = 'inline';
   fetchGreeting();
 }
-
-document.getElementById('refresh').addEventListener('click', fetchGreeting);
-
-async function fetchGreeting() {
-  if (!currentIdToken) {
-    document.getElementById('output').innerText = 'Please sign in first.';
-    return;
-  }
-  const url = APPS_SCRIPT_URL + '?id_token=' + encodeURIComponent(currentIdToken);
-  try {
-    const r = await fetch(url);
-    const j = await r.json();
-    if (j.error) {
-      document.getElementById('output').innerText = 'Error: ' + JSON.stringify(j);
-    } else {
-      document.getElementById('output').innerText = j.hello;
-    }
-  } catch (err) {
-    document.getElementById('output').innerText = 'Fetch failed: ' + err;
-  }
-}
