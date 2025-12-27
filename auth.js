@@ -3,10 +3,9 @@ function getIdToken() {
 }
 
 function requireLogin() {
-    //if (!getIdToken()) {
-    //    window.location.href = './index.html';
-    //}
-    print("HALLO");
+    if (!getIdToken()) {
+        window.location.href = './index.html';
+    }
 }
 
 function logout() {
