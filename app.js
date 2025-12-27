@@ -11,3 +11,8 @@ fetch(BACKEND_URL, {
 .then(data => {
   document.getElementById('content').textContent = data.greeting;
 });
+
+//Eventlistener: Go to add thing
+document.getElementById('goToAddThing').addEventListener('click', () => {
+  window.location.href = './add-thing.html';
+});
