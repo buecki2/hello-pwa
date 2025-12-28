@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hello-pwa-v8';
+const CACHE_NAME = 'hello-pwa-v9';
 const FILES_TO_CACHE = ['./', './index.html', './app.html', './app.js', './login.js', 'auth.js', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', evt => {
@@ -9,8 +9,19 @@ self.addEventListener('install', evt => {
 });
 
 self.addEventListener('fetch', evt => {
+  const url = new URL(evt.request.url);
+
+  if (
+    url.origin === 'https://script.google.com' ||
+    url.origin === 'https://accounts.google.com'
+  ) {
+    return;
+  }
+
   evt.respondWith(
-    caches.match(evt.request).then(cached => cached || fetch(evt.request))
+    caches.match(evt.request).then(cached => {
+      return cached || fetch(evt.request);
+    })
   );
 });
 
