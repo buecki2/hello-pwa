@@ -3,9 +3,9 @@ function getIdToken() {
 }
 
 function requireLogin() {
-    if (!getIdToken()) {
-        window.location.href = './index.html';
-    }
+    // if (!getIdToken()) {
+    //     window.location.href = './index.html';
+    // }
 }
 
 function logout() {

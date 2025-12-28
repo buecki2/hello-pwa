@@ -13,6 +13,6 @@ fetch(BACKEND_URL, {
 });
 
 //Eventlistener: Go to add thing
-document.getElementById('goToAddThing').addEventListener('click', () => {
+document.getElementById('buttonGoToAddThing').addEventListener('click', () => {
   window.location.href = './add-thing.html';
 });
