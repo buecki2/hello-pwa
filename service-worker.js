@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hello-pwa-v14';
+const CACHE_NAME = 'hello-pwa-v15';
 const FILES_TO_CACHE = ['./', './index.html', './app.html', './app.js', './login.js', 'auth.js', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', evt => {
