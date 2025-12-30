@@ -1,5 +1,11 @@
-const CACHE_NAME = 'hello-pwa-v19';
-const FILES_TO_CACHE = ['./', './index.html', './app.html', './app.js', './login.js', 'auth.js', './manifest.json', './icon-192.png', './icon-512.png'];
+const CACHE_NAME = 'hello-pwa-v20';
+const FILES_TO_CACHE = ['./', './icon-192.png', './icon-512.png', 
+  './auth.js', './manifest.json', '.api.js',
+  './index.html', './login.js',
+  './app.html', './app.js',   
+  './add-thing.html', './add-thing.js',
+  './add-user.html', './add-user.js'
+  ];
 
 self.addEventListener('install', evt => {
   evt.waitUntil(

@@ -23,27 +23,32 @@ function loadUsers() {
   });
 }
 
-// 🔹 add user
 button.addEventListener('click', () => {
-  const value = input.value.trim();
-  if (!value) return;
-
-  button.disabled = true;
-
-  fetch(BACKEND_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      id_token: getIdToken(),
-      action: 'addUser',
-      value
+    const value = input.value.trim();
+    if (!value) return;
+  
+    button.disabled = true;
+  
+    fetch(BACKEND_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        action: 'addUser',
+        value: value,
+        id_token: getIdToken()
+      })
     })
-  })
-  .then(() => {
-    input.value = '';
-    loadUsers(); // 🔁 refresh table
-  })
-  .finally(() => {
-    button.disabled = false;
+      .then(r => r.json())
+      .then(result => {
+        if (result.added) {
+          input.value = '';
+          loadUsers();
+        }
+      })
+      .catch(err => {
+        alert('Network error while saving');
+        console.error(err);
+      })
+      .finally(() => {
+        button.disabled = false;
+      });
   });
-});
