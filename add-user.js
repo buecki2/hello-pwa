@@ -16,15 +16,7 @@ function loadUsers() {
       })
     .then(r => r.json())
   .then(data => {
-    tableBody.innerHTML = '';
-
-    data.users.forEach(user => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      td.textContent = user;
-      tr.appendChild(td);
-      tableBody.appendChild(tr);
-    });
+    console.log(data);
   })
   .catch(err => {
     console.error('Failed to load users', err);
