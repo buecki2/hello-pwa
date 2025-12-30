@@ -12,16 +12,24 @@ button.addEventListener('click', () => {
 
   fetch(BACKEND_URL, {
     method: 'POST',
-    mode: 'no-cors',
     body: JSON.stringify({
-      id_token: getIdToken(),
       action: 'addIfNotExists',
-      value: value
+      value: value,
+      id_token: getIdToken()
     })
-  });
-
-  input.value = '';
-  button.disabled = false;
-
-  window.location.href = './add-thing.html';
+  })
+    .then(r => r.json())
+    .then(result => {
+      alert(result.message || 'Done');
+      if (result.added) {
+        input.value = '';
+      }
+    })
+    .catch(err => {
+      alert('Network error while saving');
+      console.error(err);
+    })
+    .finally(() => {
+      button.disabled = false;
+    });
 });
