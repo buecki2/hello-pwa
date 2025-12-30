@@ -8,14 +8,13 @@ loadUsers();
 
 function loadUsers() {
   fetch(BACKEND_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      id_token: getIdToken(),
-      action: 'listUsers'
-    })
-  })
-  .then(r => r.json())
+        method: 'POST',
+        body: JSON.stringify({
+          id_token: getIdToken(),
+          action: 'listUsers'
+        })
+      })
+    .then(r => r.json())
   .then(data => {
     tableBody.innerHTML = '';
 
