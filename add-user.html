@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutzer hinzufügen</title>
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+  <h1>Nutzer hinzufügen</h1>
+  <p>Nutzer:</p>
+  <input
+    type="text"
+    minlength="1"
+    id="inputAddUser"
+    size="20"
+  />
+  <button id="buttonAddUser">Hinzufügen</button>
+  <h1>Bestehende Nutzer:</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nutzer</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody">
+      <!-- rows inserted by JS -->
+    </tbody>
+  </table>
+  
+  <script src="./auth.js"></script>
+  <script src="./api.js"></script>
+  <script src="./add-thing.js"></script>
+</body>
+</html>
