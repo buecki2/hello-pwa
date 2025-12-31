@@ -1,7 +1,7 @@
 const BACKEND_URL="https://script.google.com/macros/s/AKfycbwWdGfRWufhuuKMB1qgIw0uiIYKzcNiz3BZ9OGJuJZJkrNDdnEjKWDKwx4tmCkZXMtV0g/exec"
 
 function addIfNotExists(value, tableName, tableRange){
-    fetch(BACKEND_URL, {
+    return fetch(BACKEND_URL, {
         method: 'POST',
         body: JSON.stringify({
             action: 'addIfNotExists',
@@ -10,5 +10,5 @@ function addIfNotExists(value, tableName, tableRange){
             tableRange: tableRange,
             id_token: getIdToken()
         })
-    })
+    });
 }
