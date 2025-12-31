@@ -29,14 +29,7 @@ button.addEventListener('click', () => {
   
     button.disabled = true;
   
-    fetch(BACKEND_URL, {
-      method: 'POST',
-      body: JSON.stringify({
-        action: 'addUser',
-        value: value,
-        id_token: getIdToken()
-      })
-    })
+    addIfNotExists(value, 'users', 'A:A')
       .then(r => r.json())
       .then(result => {
         if (result.added) {

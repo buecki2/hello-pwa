@@ -10,14 +10,7 @@ button.addEventListener('click', () => {
 
   button.disabled = true;
 
-  fetch(BACKEND_URL, {
-    method: 'POST',
-    body: JSON.stringify({
-      action: 'addIfNotExists',
-      value: value,
-      id_token: getIdToken()
-    })
-  })
+  addIfNotExists(value, 'thing', 'A:A')
     .then(r => r.json())
     .then(result => {
       alert(result.message || 'Done');
