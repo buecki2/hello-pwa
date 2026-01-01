@@ -10,10 +10,10 @@ button.addEventListener('click', () => {
 
   button.disabled = true;
 
-  addIfNotExists(value, 'thing', 'A:A')
+  addIfNotExists(value, 'things', 'A:A')
     .then(r => r.json())
     .then(result => {
-      alert(result.message || 'Done');
+      alert(result.message || 'No response, success unclear');
       if (result.added) {
         input.value = '';
       }
