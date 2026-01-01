@@ -16,7 +16,11 @@ function loadUsers() {
       })
     .then(r => r.json())
   .then(data => {
-    console.log(data);
+    for (user of data.users) {
+        var row = tableBody.insertRow();
+        var cell0 = row.insertCell(0);
+        cell0.innerHTML = user;
+    }
   })
   .catch(err => {
     console.error('Failed to load users', err);

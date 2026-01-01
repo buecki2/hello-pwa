@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hello-pwa-v23';
+const CACHE_NAME = 'hello-pwa-v24';
 const FILES_TO_CACHE = ['./', './icon-192.png', './icon-512.png', 
   './auth.js', './manifest.json', '.api.js',
   './index.html', './login.js',
